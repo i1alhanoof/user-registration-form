@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment #1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        span {
+            color: red;
+        }
+        label{
+            display: block;
+        }
+        .form-control{
+            width: 50%;
+            display: inline;
+        }
+    </style>
+    <script src="client-side-validation.js"></script>
+</head>
+
+<body>
+    <div class="m-4">
+        <form action="server-side-validation.php" method="post" onsubmit="return formValidation()">
+
+            <!-- for create name form -->
+            <div class="name-container mb-4">
+                <label for="nameText" class="form-label">Name <span>*</span></label>
+                <input type="text" id="nameText" name="nameText" placeholder="Enter Name" class="form-control" oninput="nameValidation()">
+                <span id="nameError" class="error"></span>
+            </div>
+
+            <!-- for create email form -->
+            <div class="email-container mb-4">
+                <label for="emailText" class="form-label">Email <span>*</span></label>
+                <input type="text" id="emailText" name="emailText" placeholder="Enter Email" class="form-control" oninput="emailValidation()">
+                <span id="emailError" class="error"></span>
+            </div>
+
+            <!-- for create password form -->
+            <div class="password-container mb-4">
+                <label for="passwordText" class="form-label">Password <span>*</span></label>
+                <input type="password" id="passwordText" name="passwordText" placeholder="Enter Password" class="form-control" oninput="passwordValidation()">
+                <span id="passwordError" class="error"></span>
+                <div id="passwordHelp" class="form-text">Your password must be at least 8 characters long.</div>
+            </div>
+
+            <!-- for create confirm password form -->
+            <div class="confirm-password-container mb-4">
+                <label for="confirmPasswordText" class="form-label">Confirm Password <span>*</span></label>
+                <input type="password" id="confirmPasswordText" name="confirmPasswordText" placeholder="Confirm Password" class="form-control" oninput="confirmPasswordValidation()">
+                <span id="confirmPasswordError" class="error"></span>
+            </div>
+
+            <!-- submit form button -->
+            <div class="register-container">
+                <input type="submit" value="Register" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
